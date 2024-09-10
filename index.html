@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="new.css" />
+    <title>Interactive Resume Builder</title>
+</head>
+<body>
+
+    <!-- Input Form Section -->
+    <div class="input-container" id="inputContainer">
+        <div class="heading">
+            <h1>Interactive Resume Builder</h1>
+            <h3>By Zahida Abbasi</h3>
+        </div>
+
+        <!-- Personal Information Section -->
+        <div class="row">
+            <div class="personal-info">
+                <h2 class="row-heading">Personal Information</h2>
+
+                <!-- Profile Picture Upload -->
+                <div class="input-field">
+                    <label for="profileField"></label>
+                    <input type="file" name="profileField" id="profileField" placeholder="profilefield"/>
+                </div>
+
+                <!-- Name Input -->
+                <div class="input-field">
+                    <label for="nameField">Your Name</label>
+                    <input type="text" id="nameField" placeholder="Enter Your Name" required/>
+                </div>
+
+                <!-- Contact Number Input -->
+                <div class="input-field">
+                    <label for="contactField">Contact Numbers</label>
+                    <input type="text" id="contactField" placeholder="Enter Your Contact Numbers" />
+                </div>
+
+                <!-- Email Input -->
+                <div class="input-field">
+                    <label for="emailField">Email</label>
+                    <input type="email" id="emailField" placeholder="Enter your Email" required/>
+                </div>
+
+                <!-- Address Input -->
+                <div class="input-field">
+                    <label for="addressField">Your Address</label>
+                    <textarea id="addressField" placeholder="Enter Address" rows="3"></textarea>
+                </div>
+
+                <!-- Social Media Links Section -->
+                <div class="links">
+                    <h2>Important Links</h2>
+
+                    <div class="input-field">
+                        <label for="fbField">Facebook</label>
+                        <input type="text" id="fbField" placeholder="Facebook Profile URL" />
+                    </div>
+
+                    <div class="input-field">
+                        <label for="linkedInField">LinkedIn</label>
+                        <input type="text" id="linkedInField" placeholder="LinkedIn Profile URL" />
+                    </div>
+
+                    <div class="input-field">
+                        <label for="githubField">GitHub</label>
+                        <input type="text" id="githubField" placeholder="GitHub Profile URL" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Professional Information Section -->
+            <div class="professional-info">
+                <h2 class="row-heading">Professional Information</h2>
+
+                <!-- Education Section with Option to Add More -->
+                <div id="academicQ" class="input-field">
+                    <label>Education</label>
+                    <textarea class="academic-field" placeholder="Enter Your Education Details" rows="3"></textarea>
+                    <div class="btn-container">
+                        <button id="addAcademicBtn" class="add-btn">Add More</button>
+                    </div>
+                </div>
+
+                <!-- Skills Section with Option to Add More -->
+                <div id="skills" class="input-field">
+                    <label>Skills</label>
+                    <textarea class="skills-field" placeholder="Enter Your Skills" rows="3"></textarea>
+                    <div class="btn-container">
+                        <button id="addSkillsBtn" class="add-btn">Add More</button>
+                    </div>
+                </div>
+
+                <!-- Work Experience Section with Option to Add More -->
+                <div id="workExperience" class="input-field">
+                    <label>Work Experience</label>
+                    <textarea class="work-field" placeholder="Enter Your Work Experience" rows="3"></textarea>
+                    <div class="btn-container">
+                        <button id="addWorkExpBtn" class="add-btn">Add More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Generate CV Button -->
+        <div class="generate-container">
+            <button id="generateCVBtn" class="generate-btn">Generate CV</button>
+
+        </div>
+    </div>
+
+    <!-- CV Display Section -->
+    <div class="design-container" id="designContainer">
+        <div class="design-row">
+            <!-- Left Section (Profile & Contact Information) -->
+            <div class="design-left">
+                <div class="img-container">
+                    <img src="img/img1.png" alt="Profile Picture" id="profile" />
+                </div>
+
+                <div class="details-info">
+                    <p><strong>Name:</strong> <span id="nameDesign"></span></p>
+                    
+                    <p><strong>Contact:</strong> <span id="contactDesign"></span></p>
+
+                    <p><strong>Email:</strong> <span id="emailDesign"></span></p>
+
+                    <p><strong>Address:</strong> <span id="addressDesign"></span></p>
+                </div>
+
+                <!-- Links -->
+                <div class="social-links">
+                    <a id="fbDesign" target="_blank"><img src="img/fb1.png" alt="Facebook" /></a>
+                    <a id="linkDesign" target="_blank"><img src="img/link.png" alt="LinkedIn" /></a>
+                    <a id="gitDesign" target="_blank"><img src="img/git.png" alt="GitHub" /></a>
+                </div>
+            </div>
+
+            <!-- Right Section (Professional Info) -->
+            <div class="design-right">
+                <h1 id="name2Design">Your Name Here</h1>
+
+                <!-- Education Section -->
+                <div class="info-section">
+                    <h3>Education</h3>
+                    <ul id="eduDesign"></ul>
+                </div>
+
+                <!-- Skills Section -->
+                <div class="info-section">
+                    <h3>Skills</h3>
+                    <ul id="skillsDesign"></ul>
+                </div>
+
+                <!-- Work Experience Section -->
+                <div class="info-section">
+                    <h3>Work Experience</h3>
+                    <ul id="workDesign"></ul>
+                </div>
+
+                <!-- Print CV Button -->
+                <div class="generate-container">
+                    <button id="printCVBtn" class="generate-btn">Print CV</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- External JS File -->
+    <script src="script.js" type="module"></script>
+</body>
+</html>
