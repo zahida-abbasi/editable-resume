@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Resume</title>
+</head>
+<body>
+  <div id="resumeContainer">
+    <!-- User resume content will be populated here -->
+  </div>
+
+  <!-- Button to generate the shareable link -->
+  <button id="shareLinkBtn">Generate Shareable Link</button>
+  <p id="shareableLink"></p>
+
+  <script>
+    function getQueryParams() {
+      const params = new URLSearchParams(window.location.search);
+      return {
+        username: params.get("username"),
+        name: params.get("name"),
+        jobTitle: params.get("jobTitle"),
+      };
+    }
+
+    window.onload = function () {
+      const { name, jobTitle } = getQueryParams();
+
+      if (name && jobTitle) {
+        document.getElementById("resumeContainer").innerHTML = `
+          <h1>${name}'s Resume</h1>
+          <p>Job Title: ${jobTitle}</p>
+        `;
+      } else {
+        document.getElementById("resumeContainer").innerHTML = `
+          <p>No resume data found.</p>
+        `;
+      }
+    };
+
+    // Function to generate and display the shareable link
+    document.getElementById("shareLinkBtn").addEventListener("click", function() {
+      const currentUrl = window.location.href;
+      document.getElementById("shareableLink").textContent = `Shareable Link: ${currentUrl}`;
+    });
+  </script>
+</body>
+</html>
